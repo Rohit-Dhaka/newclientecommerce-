@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
 import Relatedproduct from '../components/Relatedproduct';
@@ -10,6 +10,7 @@ const Product = () => {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
+  const navigate = useNavigate();
 
   const fetchProductData = async () =>{
     products.map((item)=>{
@@ -66,7 +67,10 @@ const Product = () => {
                   ))}
                 </div>
             </div>
-            <button onClick={()=>addToCart(productData._id,size)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 '>ADD TO CARD</button>
+            <button onClick={() => {
+  addToCart(productData._id, size);
+  navigate("/cart");
+}} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 '>ADD TO CARD</button>
             <hr className='mt-8 sm:w-4/5' />
             <div className='flex flex-col text-sm text-gray-500 mt-5 gap-1'>
               <p>100% Original Product.</p>

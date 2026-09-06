@@ -15,11 +15,13 @@ import Searchbar from './components/Searchbar.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from './pages/Contact.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+      <ScrollToTop/>
        <ToastContainer />
        <Navbar />
        <Searchbar />
@@ -29,7 +31,7 @@ const App = () => {
         <Route path='/about' element={ <About /> } />
         <Route path='/contact' element={ <Contact /> } />
         <Route path='/product/:productId' element={ <Product /> } />
-        <Route path='/card' element={ <Card /> } />
+        <Route path='/cart' element={ <Card /> } />
         <Route path='/login' element={ <Login /> } />
         <Route path='/place-order' element={ <Placeorder /> } />
         <Route path='/orders' element={ <Order /> } />
