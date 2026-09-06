@@ -4,8 +4,7 @@ import Title from './Title.jsx'
 import Productitem from './Productitem.jsx';
 
 const LatestCollection = () => {
-    const { products } = useContext(ShopContext);
-    // console.log(products)
+    const { products } = useContext(ShopContext);    
     const [latestproducts, setLatestproducts] = useState([]);
 
     useEffect(()=>{
@@ -21,7 +20,7 @@ const LatestCollection = () => {
             </p>
         </div>
 
-        {/* Rendring Product  */}
+        
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 '>
           {
             latestproducts.map((item,index)=>(

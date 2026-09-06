@@ -22,8 +22,7 @@ const Card = () => {
           });
         }
       }
-    }
-    // console.log(tempData);
+    }    
     setCartData(tempData);
   }
   },[cartItems, products]);
